@@ -1,0 +1,43 @@
+version: '3'
+services:
+  frontend:
+    build: ./client
+    ports:
+      - "1137:1137"
+    volumes:
+      - ./client:/usr/src/app/1137_frontend
+
+  auth:
+    build: ./Auth
+    ports:
+      - "1138:1138"
+    volumes:
+      - ./Auth:/usr/src/app/1137_backend
+
+  classrooms:
+    build: ./Classrooms
+    ports:
+      - "1139:1139"
+    volumes:
+      - ./Classrooms:/usr/src/app/1137_backend
+
+  post:
+    build: ./Post
+    ports:
+      - "1140:1140"
+    volumes:
+      - ./Post:/usr/src/app/1137_backend
+
+  event-bus:
+    build: ./event-bus
+    ports:
+      - "1141:1141"
+    volumes:
+      - ./event-bus:/usr/src/app/1137_backend
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
