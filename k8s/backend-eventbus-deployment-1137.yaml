@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-eventbus-1137
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-eventbus-1137
+  template:
+    metadata:
+      labels:
+        app: backend-eventbus-1137
+    spec:
+      containers:
+      - name: backend-eventbus
+        image: murtazahasan1/eduhub-eventbus-1137:latest
+        ports:
+        - containerPort: 1141

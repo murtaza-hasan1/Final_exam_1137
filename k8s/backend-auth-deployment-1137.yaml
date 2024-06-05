@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-auth-1137
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-auth-1137
+  template:
+    metadata:
+      labels:
+        app: backend-auth-1137
+    spec:
+      containers:
+      - name: backend-auth
+        image: murtazahasan1/eduhub-auth-1137:latest
+        ports:
+        - containerPort: 1138

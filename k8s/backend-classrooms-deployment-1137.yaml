@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-classrooms-1137
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-classrooms-1137
+  template:
+    metadata:
+      labels:
+        app: backend-classrooms-1137
+    spec:
+      containers:
+      - name: backend-classrooms
+        image: murtazahasan1/eduhub-classrooms-1137:latest
+        ports:
+        - containerPort: 1139

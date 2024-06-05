@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-post-service-1137
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 1140
+  selector:
+    app: backend-post-1137
